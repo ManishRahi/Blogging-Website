@@ -1,0 +1,34 @@
+<%- include("partials/header.ejs") %>
+<head>
+    <link rel="stylesheet" href="styles/create.css">
+    
+</head>
+<body>
+    <div class="createblogs">
+        <form action="/submit" method="post">
+    
+            <div class="nameBlock field">
+                <label for="bloggerName"> Name </label>
+                <input type="text" name="bloggerName" id="bloggerName" placeholder="Your Name">
+            </div>
+            <div class="titleBlock field">
+                <label for="Title" > Title</label>
+                <input type="text" name="title" id="title" placeholder="Your Blog Title">
+            </div>
+            <div class="contentBlock field">
+                <label for="Blog" > The Blog</label>
+                <textarea type="text" name="blogContent" id="blogContent" placeholder="Your Blog content"></textarea>
+            </div>
+    
+            <div class="SubBtn">
+                <button class="SubmitButton" type="submit "  style="border-radius: 7px;">submit</button>
+            </div>
+        
+            
+        </form>
+    </div>
+</body>
+
+
+
+<%- include("partials/footer.ejs") %>

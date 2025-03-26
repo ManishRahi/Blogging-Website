@@ -1,0 +1,52 @@
+<%- include("partials/header.ejs") %>
+
+<head>
+    <link rel="stylesheet" href="styles/read.css">
+    
+</head>
+
+     
+    <% if(locals.blogs && blogs.length !=0){%>
+        <% for(let i=0; i<blogs.length; i++){ %>
+            <% console.log(i); %>
+
+<body>
+
+    <div class="createblogs">
+
+        <form action="/update" method="post">
+    
+            <div class="titleBlock field">
+                <label  id="title" for="Title" > <h2> <%= blogs[i].title %> </h2></label>
+                <input type="hidden" type="text" name="title" id="title"  value="<%= blogs[i].title %>"></input>
+
+
+                <div class="nameBlock field">
+                    <label id="author" for="Name"> <h6> ~By <%= blogs[i].author %> </h6> </label>
+                    <input type="hidden" type="text" name="bloggerName" id="bloggerName" value="<%= blogs[i].author %>"></input>
+                </div>
+
+            </div>
+            <div class="contentBlock field">
+                <label id="content" for="Blog" ><%= blogs[i].content %></label>
+                <input type="hidden"  name="blogContent" id="blogContent" value="<%= blogs[i].content %>" ></input>
+            </div>
+
+            <input type="hidden" name="blogIdx" value="<%= i %>" >
+    
+            <div class="SubBtn">
+                <button class="SubmitButton" type="submit "  style="border-radius: 7px;">Update</button>
+            </div>
+
+            
+        
+            
+        </form>
+    </div>
+</body>
+<% }}else{ %>
+    <h1>Opps..! It's empty</h1>
+    <% } %>
+
+
+<%- include("partials/footer.ejs") %>

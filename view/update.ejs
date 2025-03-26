@@ -1,0 +1,41 @@
+<%- include("partials/header.ejs") %>
+<head>
+    <link rel="stylesheet" href="styles/create.css">
+    
+</head>
+
+<% if(author_upd && title_upd && content_upd && idx_upd){ %>
+
+<body>
+    <div class="createblogs">
+        <form action="/read" method="post">
+    
+            <div class="nameBlock field">
+                <label for="bloggerName"> Name </label>
+                <input type="text" name="bloggerName" id="bloggerName" placeholder="Your Name" value="<%= author_upd %>"  >
+            </div>
+            <div class="titleBlock field">
+                <label for="Title" > Title</label>
+                <input type="text" name="title" id="title" placeholder="Your Blog Title" value="<%= title_upd %>">
+            </div>
+            <div class="contentBlock field">
+                <label for="Blog" > The Blog</label>
+                <textarea type="text" name="blogContent" id="blogContent" placeholder="Your Blog content" ><%= content_upd %></textarea>
+            </div>
+
+            <input type="hidden" name="index_UPDATE" value="<%= idx_upd %>">
+    
+            <div class="SubBtn">
+                <button class="SubmitButton" type="submit "  style="border-radius: 7px;">Update</button>
+            </div>
+        
+            
+        </form>
+    </div>
+</body>
+
+<% } %>
+
+
+
+<%- include("partials/footer.ejs") %>
